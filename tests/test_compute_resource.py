@@ -5,14 +5,13 @@ from foreman.foreman import ForemanError
 
 import yaml
 
-f=Foreman('hhov-sat01.esailors.net', '443', 'tbade', 'tipp24')
+f = Foreman('hhov-sat01.esailors.net', '443', 'tbade', 'tipp24')
 
-data = {}
-data['name'] = "TestComputeResource"
+data = {'name': "TestComputeResource"}
 
 try:
     result = f.get_compute_resource(data=data)
-    print yaml.safe_dump(result)
+    print(yaml.safe_dump(result))
 
     if not result:
 #{"name": "TestComputeResource", "password": "secret", "provider": "VMWare", "server": "compute01.example.com", "state": "present", "url": "compute01.example.com", "user": "ansible"}
